@@ -27,8 +27,7 @@ class PolygonCollision {
   }
 
   //Check polygon intersection function using SAT
-  static bool doesOverlap(
-      List<Point> polygon, List<Point> otherPolygon) {
+  static bool doesOverlap(List<Point> polygon, List<Point> otherPolygon) {
     if (polygon == null) throw ArgumentError.notNull("polygon");
     if (otherPolygon == null) throw ArgumentError.notNull("otherPolygon");
     var polygons = [polygon, otherPolygon];
@@ -66,8 +65,7 @@ class PolygonCollision {
     if (point == null) throw ArgumentError.notNull("point");
     bool result = false;
     for (int j = 0; j < polygon.length; j++) {
-      if(polygon[j]==point)
-        return true;
+      if (polygon[j] == point) return true;
       int i = (j + 1) % polygon.length;
       if (polygon[i].y < point.y && polygon[j].y >= point.y ||
           polygon[j].y < point.y && polygon[i].y >= point.y) {
