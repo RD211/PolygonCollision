@@ -1,6 +1,5 @@
 import 'dart:math' show Point;
-
-import 'package:Poly_Collision/poly_collisions.dart';
+import 'package:poly_collision/poly_collisions.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
