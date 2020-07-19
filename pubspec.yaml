@@ -1,7 +1,6 @@
-name: poly_collision
+name: poly_collisions
 description: Polygon collision plugin using Separated Axis Theorem.
 version: 1.0.0
-author: RD211
 repository: https://github.com/RD211/PolygonCollision
 
 environment:
