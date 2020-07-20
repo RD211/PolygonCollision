@@ -64,7 +64,6 @@ class PolygonCollision {
     } catch (e) {
       return false;
     }
-    return false;
   }
 
   //Check polygon intersection function using SAT for convex and simple for concave
@@ -85,6 +84,7 @@ class PolygonCollision {
             : _doesOverlapConcave(polygon, otherPolygon);
         break;
     }
+    return false;
   }
 
   //Check if point is in polygon function
