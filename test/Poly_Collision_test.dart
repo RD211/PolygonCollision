@@ -8,6 +8,7 @@ void main() {
         PolygonCollision.doesOverlap(
           [new Point(1, 1), new Point(2, 1), new Point(2, 2), new Point(1, 2)],
           [new Point(1, 1), new Point(2, 1), new Point(2, 2), new Point(1, 2)],
+          type: PolygonType.Auto
         ),
         true);
     expect(
@@ -85,6 +86,27 @@ void main() {
                   new Point(2, 2),
                   new Point(1, 2)
                 ], new Point(3, 3)),
+                false),
+          });
+  test(
+      "Convex polygon tests",
+      () => {
+            expect(
+                PolygonCollision.isConvexPolygon([
+                  new Point(1, 1),
+                  new Point(2, 1),
+                  new Point(2, 2),
+                  new Point(1, 2)
+                ]),
+                true),
+            expect(
+                PolygonCollision.isConvexPolygon([
+                  new Point(1, 1),
+                  new Point(2, 1),
+                  new Point(1.5, 1.5),
+                  new Point(2, 2),
+                  new Point(1, 2)
+                ]),
                 false),
           });
 }
