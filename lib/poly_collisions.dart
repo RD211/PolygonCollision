@@ -4,6 +4,7 @@ import 'dart:math' show Point, atan2, max, min, pi, sqrt;
 
 //Polygon types for selection
 enum PolygonType { Convex, Concave, Auto }
+
 //Implementation is done using S.A.T. (SEPARATED AXIS THEOREM)
 //for convex polygons and for concave uses less efficient algorithm
 class PolygonCollision {
@@ -51,16 +52,15 @@ class PolygonCollision {
           angle += 2 * pi;
         else if (angle > pi) angle -= 2 * pi;
         if (i == 0) {
-          if ((angle).abs()<0.00001) return false;
+          if ((angle).abs() < 0.00001) return false;
           orientation = angle > 0.0 ? 1.0 : -1.0;
         } else {
           if (orientation * angle <= 0.0) return false;
         }
         angleSum += angle;
-
       }
 
-        return ((angleSum / (2 * pi)).round()).abs() == 1;
+      return ((angleSum / (2 * pi)).round()).abs() == 1;
     } catch (e) {
       return false;
     }
@@ -148,7 +148,7 @@ class PolygonCollision {
     b.forEach((element) {
       if (isPointInPolygon(a, element)) overlappingPoints = true;
     });
-    if(overlappingPoints) return true;
+    if (overlappingPoints) return true;
     //Check every line segment
     for (int i = 0; i < a.length; i++) {
       int j = (i + 1) % a.length;

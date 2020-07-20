@@ -1,6 +1,6 @@
 name: poly_collisions
 description: Polygon collision detection algorithms for Convex Polygons (using S.A.T.) and also for concave polygons using a simple algorithm.
-version: 1.2.3
+version: 1.2.4
 repository: https://github.com/RD211/PolygonCollision
 
 environment:
