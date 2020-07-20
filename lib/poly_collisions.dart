@@ -141,12 +141,14 @@ class PolygonCollision {
 
   static bool _doesOverlapConcave(List<Point> a, List<Point> b) {
     //Check every point if its in the other poly
+    bool overlappingPoints = false;
     a.forEach((element) {
-      if (isPointInPolygon(b, element)) return true;
+      if (isPointInPolygon(b, element)) overlappingPoints = true;
     });
     b.forEach((element) {
-      if (isPointInPolygon(a, element)) return true;
+      if (isPointInPolygon(a, element)) overlappingPoints = true;
     });
+    if(overlappingPoints) return true;
     //Check every line segment
     for (int i = 0; i < a.length; i++) {
       int j = (i + 1) % a.length;
