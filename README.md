@@ -9,8 +9,7 @@ isConvexPolygon to determine if polygon is convex or not
 
 # Quick start
 
-<code>
-
+```
 //Library import
 import 'package:poly_collisions/poly_collisions.dart';
 
@@ -34,7 +33,7 @@ var result = PolygonCollision.doesOverlap(polygon, other, type: PolygonType.Conc
 var result = PolygonCollision.isPointInPolygon(polygon, Point(0,0));
 //2. Checks if given polygon is convex or not
 var result = PolygonCollision.isConvexPolygon(polygon);
-</code>
+```
 
 ## Features
 
