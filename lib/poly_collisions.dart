@@ -69,8 +69,6 @@ class PolygonCollision {
   //Check polygon intersection function using SAT for convex and simple for concave
   static bool doesOverlap(List<Point> polygon, List<Point> otherPolygon,
       {PolygonType type = PolygonType.Auto}) {
-    if (polygon == null) throw ArgumentError.notNull("polygon");
-    if (otherPolygon == null) throw ArgumentError.notNull("otherPolygon");
     switch (type) {
       case PolygonType.Concave:
         return _doesOverlapConcave(polygon, otherPolygon);
@@ -89,8 +87,6 @@ class PolygonCollision {
 
   //Check if point is in polygon function
   static bool isPointInPolygon(List<Point> polygon, Point point) {
-    if (polygon == null) throw ArgumentError.notNull("polygon");
-    if (point == null) throw ArgumentError.notNull("point");
     bool result = false;
     for (int j = 0; j < polygon.length; j++) {
       if (polygon[j] == point) return true;
