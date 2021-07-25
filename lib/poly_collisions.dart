@@ -22,7 +22,7 @@ class PolygonCollision {
     double minPolygonOne = double.infinity,
         maxPolygonOne = double.negativeInfinity;
     polygon.forEach((point) {
-      double value = (point.x * axisProjection.x + point.y * axisProjection.y);
+      double value = (point.x * axisProjection.x + point.y * (axisProjection.y as double));
       minPolygonOne = min(minPolygonOne, value);
       maxPolygonOne = max(maxPolygonOne, value);
     });
@@ -72,17 +72,13 @@ class PolygonCollision {
     switch (type) {
       case PolygonType.Concave:
         return _doesOverlapConcave(polygon, otherPolygon);
-        break;
       case PolygonType.Convex:
         return _doesOverlapConvex(polygon, otherPolygon);
-        break;
       case PolygonType.Auto:
         return (isConvexPolygon(polygon) && isConvexPolygon(otherPolygon))
             ? _doesOverlapConvex(polygon, otherPolygon)
             : _doesOverlapConcave(polygon, otherPolygon);
-        break;
     }
-    return false;
   }
 
   //Check if point is in polygon function
